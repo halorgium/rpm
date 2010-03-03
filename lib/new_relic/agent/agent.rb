@@ -384,7 +384,7 @@ module NewRelic
     end
       
     def determine_host
-      Socket.gethostname
+      control.fetch('hostname', nil) || Socket.gethostname
     end
     
     def determine_home_directory
